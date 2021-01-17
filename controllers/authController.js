@@ -32,7 +32,7 @@ exports.registerHandle = (req, res) => {
     }
 
     if (errors.length > 0) {
-        res.render('register', {
+        res.render('auth/register', {
             errors,
             name,
             email,
@@ -46,7 +46,7 @@ exports.registerHandle = (req, res) => {
             if (user) {
                 //------------ User already exists ------------//
                 errors.push({ msg: 'Email ID already registered' });
-                res.render('register', {
+                res.render('auth/register', {
                     errors,
                     name,
                     email,
@@ -191,7 +191,7 @@ exports.forgotPassword = (req, res) => {
     }
 
     if (errors.length > 0) {
-        res.render('forgot', {
+        res.render('auth/forgot', {
             errors,
             email
         });
@@ -200,7 +200,7 @@ exports.forgotPassword = (req, res) => {
             if (!user) {
                 //------------ User already exists ------------//
                 errors.push({ msg: 'User with Email ID does not exist!' });
-                res.render('forgot', {
+                res.render('auth/forgot', {
                     errors,
                     email
                 });

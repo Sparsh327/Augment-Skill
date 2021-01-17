@@ -1,0 +1,40 @@
+.courses {
+    margin-top: 74px;
+    padding: 16px;
+}
+
+.wrapper {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1em;
+
+}
+
+@media (max-width: 986px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1em;
+    }
+
+    .containe {
+        max-width: 90%;
+    }
+}
+
+.wrapper>div {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: rgba(0, 0, 0, 0.3);
+    padding: 1em;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.nested {
+    margin-bottom: 10px;
+    display: grid;
+    margin-left: 50px;
+    margin-right: 50px;
+    grid-template-columns: 1fr;
+}
