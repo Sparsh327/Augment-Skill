@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= name %></p>
+    <div class="mb-3">
+       <form action="/addSubject" method="POST">
+        <label for="exampleFormControlInput1" class="form-label">Subject Category</label>
+        <input name="category" type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <label for="exampleFormControlInput1" class="form-label">Subject</label>
+        <input name="subject" type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <label for="exampleFormControlInput1" class="form-label">Live WebinarLink</label>
+        <input name="webinarLink" type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Subject Description</label>
+        <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+       </form>
+</div>

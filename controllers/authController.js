@@ -67,7 +67,7 @@ exports.registerHandle = (req, res) => {
                 });
                 const accessToken = oauth2Client.getAccessToken()
 
-                const token = jwt.sign({ name, email, password }, JWT_KEY, { expiresIn: '30m' });
+                const token = jwt.sign({ name, email, password,subject}, JWT_KEY, { expiresIn: '30m' });
                 const CLIENT_URL = 'http://' + req.headers.host;
 
                 const output = `
@@ -228,7 +228,7 @@ exports.forgotPassword = (req, res) => {
                 User.updateOne({ resetLink: token }, (err, success) => {
                     if (err) {
                         errors.push({ msg: 'Error resetting password!' });
-                        res.render('forgot', {
+                        res.render('auth/forgot', {
                             errors,
                             email
                         });
