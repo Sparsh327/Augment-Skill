@@ -14,8 +14,7 @@ function subjectController(){
                 return res.redirect('/dashboard')
              })
               
-          }
-          
+          },
         }
     }
 

@@ -1,5 +1,46 @@
 <div class="container">
     <h1 class="mt-4">Dashboard</h1>
-<p class="lead mb-3">Welcome <%= name %></p>
+<p class="lead mb-3">Welcome to Dashboard</p>
     <a href="/addSubject"><button type="button" class="btn btn-info">Add Subject</button></a>
+    
+        <table class="table">
+            <thead class="thead-dark" >
+              <tr>
+                
+                <th scope="col">Id</th>
+                <th scope="col">Category</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Action</th>
+                
+              </tr>
+             
+            </thead>
+            <tbody>
+              <% for(var i = 0; i < course.length; i++) { %>
+                <tr>
+                    <td><%= i + 1 %></td>
+                    <td><%= course[i].category %></td>
+                    <td><%= course[i].subject %></td>
+                    <td>
+                        <a href="/updateSubject?id=<%= course[i]._id%>">
+                          <button type="button" class="btn btn-info btn-sm">Update Subject</button></a>
+
+                          <a class="btn border-shadow delete" data-id=<%= course[i]._id%> >
+                            <button type="button" class="btn btn-info btn-sm">Delete Subject</button>
+                            
+                        </a>
+                       
+                    </td>
+                  </tr>
+                  <% }%>
+                  
+                     
+      
+                 
+             
+        
+            </tbody>
+          </table>
+    
+   
 </div>
