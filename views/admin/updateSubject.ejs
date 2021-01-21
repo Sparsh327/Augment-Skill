@@ -3,7 +3,7 @@
 <p class="lead mb-3">Welcome </p>
 <a href="/dashboard"><button type="button" class="btn btn-info">Dashboard</button></a>
     <div class="mb-3">
-       <form  method="POST" id="update_subject">
+       <form  method="POST" id="update_subject" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<%= course._id %>">
         <label for="exampleFormControlInput1" class="form-label">Subject Category</label>
         <input name="category" type="text" value="<%= course.category %>" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -16,6 +16,7 @@
         <label for="exampleFormControlTextarea1" class="form-label">Subject Description</label>
         <input name="description" type="text" value="<%= course.description %>" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
         <!-- <textarea name="description" class="form-control" value= "<%= course.description %>" id="exampleFormControlTextarea1" rows="3"></textarea> -->
+        <input name="file" type="file" value="<%= course.img %> " class="form-control"  id="exampleFormControlInput1">
       </div>
       <button type="submit">Submit</button>
        </form>

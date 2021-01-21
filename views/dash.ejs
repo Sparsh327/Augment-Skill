@@ -6,11 +6,13 @@
         <table class="table">
             <thead class="thead-dark" >
               <tr>
-                
+                <th scope="col">Icon</th>
                 <th scope="col">Id</th>
+               
                 <th scope="col">Category</th>
                 <th scope="col">Subject</th>
                 <th scope="col">Action</th>
+               
                 
               </tr>
              
@@ -18,7 +20,9 @@
             <tbody>
               <% for(var i = 0; i < course.length; i++) { %>
                 <tr>
+                  <td> <img src="../assets/uploads/<%= course[i].img %>" alt="" style="height: 70px; width: 70px;"> </td>
                     <td><%= i + 1 %></td>
+
                     <td><%= course[i].category %></td>
                     <td><%= course[i].subject %></td>
                     <td>
@@ -31,6 +35,7 @@
                         </a>
                        
                     </td>
+                  
                   </tr>
                   <% }%>
                   

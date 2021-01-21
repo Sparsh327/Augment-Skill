@@ -18,6 +18,11 @@ const CoursesSchema = new mongoose.Schema({
     type: String,
     default: false
   },
+  //image
+  img:{
+      
+      type: String
+  }
  
 
 }, { timestamps: true });

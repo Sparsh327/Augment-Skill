@@ -15,7 +15,8 @@ exports.create = (req,res)=>{
         category,
         subject,
         webinarLink,
-        description
+        description,
+        img:req.file.filename
     })
 
     // save course in the database

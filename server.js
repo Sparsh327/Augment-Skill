@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+ 
+const fs = require('fs');
+const multer = require('multer');
 
 const app = express();
 
@@ -52,6 +55,21 @@ app.use(function(req, res, next) {
   
   next();
 });
+
+//multer add image
+var storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './assets/uploads')
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname + '-' + Date.now())
+    }
+});
+ 
+var upload = multer({ storage: storage }).single('file');
+
+module.exports=upload;
+
 //------------ Routes ------------//
 app.use('/', require('./routes/index'));
 app.use('/auth', require('./routes/auth'));
