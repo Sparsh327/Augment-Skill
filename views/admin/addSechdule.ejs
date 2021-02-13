@@ -1,0 +1,15 @@
+<section class="schedule" style="margin-top: 70px;">
+  <div class="container"> 
+      <h1>Add Webinar Schedule</h1>
+      
+   
+      <% for(var i =0;i< syllabus.length;i++){%>
+      <h3> <%= syllabus[i]%></h3>
+      <%}%>
+     <form action="/addLayout/<%=id%>" method="POST">
+         <input class="form-control" type="text" name="layout">
+         <button class="btn btn-primary" type="submit">Add Layout</button>
+     </form>
+     <form action="/deleteLayout/<%=id%>" method="POST"><button class="btn btn-danger" value="<%=syllabus%>">Delete Layout</button></form> 
+  </div>
+</section>

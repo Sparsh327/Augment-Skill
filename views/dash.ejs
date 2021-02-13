@@ -1,4 +1,5 @@
-<div class="container">
+<Section class="da" style="background-color: #9cd6ff;">
+<div class="container"> 
     <h1 class="mt-4">Dashboard</h1>
 <p class="lead mb-3">Welcome to Dashboard</p>
     <a href="/addSubject"><button type="button" class="btn btn-info">Add Subject</button></a>
@@ -28,7 +29,10 @@
                     <td>
                         <a href="/updateSubject?id=<%= course[i]._id%>">
                           <button type="button" class="btn btn-info btn-sm">Update Subject</button></a>
-
+                          
+                          <a href="/addLayout/<%=course[i]._id%>">
+                            <button type="button" class="btn btn-info btn-sm">Add Layout</button></a>
+                         
                           <a class="btn border-shadow delete" data-id=<%= course[i]._id%> >
                             <button type="button" class="btn btn-info btn-sm">Delete Subject</button>
                             
@@ -49,3 +53,4 @@
     
    
 </div>
+</Section>

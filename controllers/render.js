@@ -1,5 +1,20 @@
 
 const axios = require('axios');
+const Course = require("../models/Courses")
+
+exports.welcome = (req,res)=>{
+    axios.get('http://localhost:3006/api/subject')
+    .then(function(response){
+      //  console.log(response);
+        res.render('welcome', { course : response.data });
+    })
+    .catch(err =>{
+        res.send(err);
+    })
+}
+
+
+
 
 exports.dashBoard =(req,res)=>{
 
@@ -24,6 +39,17 @@ exports.addSubject = (req,res)=>{
         name:req.user.name
     })
 }
+
+exports.addLayout = (req,res)=>{
+    const subjectId = req.params.id;
+   Course.findOne({_id:subjectId},function(err,course){
+     res.render('admin/addSechdule',{
+         id:subjectId,
+         syllabus:course.layout.text
+        })
+   }) 
+    
+}
 // exports.updateSubject = (req,res)=>{
 //     res.render('admin/updateSubject',{
 //         name:req.user.name
@@ -37,4 +63,8 @@ exports.updateSubject = (req, res) =>{
         .catch(err =>{
             res.send(err);
         })
+}
+
+exports.viewSubject = (req,res)=>{
+    res.render("new");
 }

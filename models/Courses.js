@@ -18,10 +18,14 @@ const CoursesSchema = new mongoose.Schema({
     type: String,
     default: false
   },
+  
   //image
   img:{
       
       type: String
+  },
+  layout:{
+    text:Array
   }
  
 

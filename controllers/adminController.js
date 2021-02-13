@@ -32,7 +32,33 @@ exports.create = (req,res)=>{
             });
         }); 
 }
+//postLayout
+exports.postLayout = (req,res)=>{
+    const courseId = req.params.id;
+    const{layout} = req.body;
+    // console.log(courseId,layout);
+    Course.findByIdAndUpdate(courseId,{$push:{layout:{text:layout}}},
+        function(err){
+          if(!err){
+            res.redirect('/dashboard')
+          }
+          }) 
+}
 
+exports.deleteLayout = (req,res)=>{
+    const courseID = req.params.id;
+    const syllabus = req.body;
+    Course.findByIdAndUpdate(courseID,{$pull:{layout:{$elemMatch:{text:syllabus}}}},
+        function(err){
+          if(!err){
+            res.redirect('/dashboard')
+          }
+          }) 
+}
+
+
+
+//postLayoutEnd
 //retrive all courses
 exports.find = (req,res)=>{
     if(req.query.id){
